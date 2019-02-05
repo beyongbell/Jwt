@@ -2,11 +2,12 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">Example Component</div>
-
+                <div class="card default">
+                    <div class="card-header">
+                        Custoemrs
+                    </div>
                     <div class="card-body">
-                        I'm an example component.
+                        <router-view></router-view>
                     </div>
                 </div>
             </div>
@@ -15,9 +16,11 @@
 </template>
 
 <script>
-    export default {
-        mounted() {
-            console.log('Component mounted.')
-        }
-    }
+export default {
+    name : 'customers-main'
+}
 </script>
+
+<style>
+
+</style>

@@ -5,7 +5,7 @@
                     <div class="card-header">Example Component</div>
 
                     <div class="card-body">
-                       {{ welcome }}
+                      asdasdasd
                     </div>
                 </div>
             </div>
@@ -16,9 +16,7 @@
 export default {
     name : 'Home',
     computed:{
-        welcome() {
-            return this.$store.getters.welcome
-        }
+
     }
 }
 </script>
