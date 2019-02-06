@@ -1,5 +1,8 @@
 <template>
     <div class="container">
+        <div class="btn-warpper">
+            <router-link to="/customers/new" class="btn btn-primary btn-sm">Create</router-link>
+        </div>
         <table class="table">
             <thead>
                 <th>Name</th>
@@ -15,12 +18,13 @@
                 </template>
                 <template v-else>
                     <tr v-for="customer in customers" :key="customer.id">
+                        <td>{{ customer.id  }}</td>
                         <td>{{ customer.name  }}</td>
                         <td>{{ customer.email }}</td>
-                        <td>{{ sutomer.phone  }}</td>
+                        <td>{{ customer.phone  }}</td>
                         <td>
-                            <router-link :to="`/customer/${customer.id}`">View</router-link>
-                        </td>
+                            <router-link :to="`/customers/${customer.id}`">View</router-link>
+                        </td    >
                     </tr>
                 </template>
             </tbody>
@@ -31,6 +35,9 @@
 <script>
 export default {
     name : 'list',
+    mounted() {
+        this.$store.dispatch('getCustomers');
+    },
     computed : {
         customers() {
             return this.$store.getters.customers
@@ -40,5 +47,8 @@ export default {
 </script>
 
 <style>
-
+.btn-warpper {
+    text-align: right;
+    margin-bottom: 20px;
+}
 </style>
