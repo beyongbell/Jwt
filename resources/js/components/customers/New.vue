@@ -77,11 +77,7 @@ export default {
                 this.errors = errors;
             }
 
-            axios.post('/api/customer', this.$data.customer, {
-                headers: {
-                    "Authorization" : `Bearer ${this.currentUser.token}`
-                }
-            })
+            axios.post('/api/customer', this.$data.customer)
             .then((response) => {
                 this.$router.push('/customers')
             })
